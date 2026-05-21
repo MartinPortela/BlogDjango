@@ -1,20 +1,20 @@
 <!-- templates/detalle_post.html -->
 {% extends "base.html" %} {% block content %}
-<div class="post-entry">
+<div class="post-container">
     {% if object.portada %}
-        <img src="{{ object.portada.url }}">
+        <img src="{{ object.portada.url }}" class="post-image">
     {% endif %}
     <h2>{{ object.titulo }}</h2>
-    <p>{{ object.cuerpo }}</p>
+    <p class="post-description">{{ object.cuerpo }}</p>
     {% if object.archivo_audio %}
-        <audio controls class="float-end" style="max-width: 300px;">
+        <audio controls class="post-audio" style="max-width: 300px;">
                     <source src="{{ object.archivo_audio.url }}" type="audio/mpeg">
                     Your browser does not support the audio element.
         </audio>
     {% endif %}
 </div>
 <div>
-    <p></p><a href="{% url 'actualizar_post' object.pk %}">+ Editar
+    <p><a href="{% url 'actualizar_post' object.pk %}">+ Editar
 Post</a></p>
     <p><a href="{% url 'eliminar_post' object.pk %}">+ Eliminar Post</a></p>
 </div>

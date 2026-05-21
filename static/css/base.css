@@ -1,3 +1,176 @@
 header h1 a {
     color: red;
 }
+
+p a{
+    color: #c90101;
+}
+.post-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+
+    background-color: #23175cde;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    font-family: Arial, sans-serif;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h2 a {
+    font-size: 2rem;
+    margin-bottom: 15px;
+
+    color: #8f1515;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 15px;
+
+    color: #8f1515;
+}
+
+.post-description {
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.post-audio {
+    width: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #282369;
+    color: #fafafa;
+
+    line-height: 1.6;
+}
+
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background-color: #111;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-left h1 a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+.nav-right a {
+    text-decoration: none;
+
+    background-color: #ff4d4d;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.nav-right a:hover {
+    background-color: #e63c3c;
+}
+
+.alert {
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    background-color: #d4edda;
+
+    color: #155724;
+}
+
+.user-panel {
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.user-panel p {
+    margin-bottom: 10px;
+}
+
+.user-panel a,
+.user-panel button {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background-color: #222;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.user-panel a:hover,
+.user-panel button:hover {
+    background-color: #444;
+}
+
+main {
+    padding: 30px;
+}
