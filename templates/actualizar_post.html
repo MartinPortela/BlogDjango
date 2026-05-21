@@ -1,0 +1,9 @@
+<!-- templates/actualizar_post.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Actualizar Post</h1>
+<form action="" method="post">{% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Actualizar">
+</form>
+{% endblock content %}

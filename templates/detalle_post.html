@@ -1,0 +1,12 @@
+<!-- templates/detalle_post.html -->
+{% extends "base.html" %} {% block content %}
+<div class="post-entry">
+    <h2>{{ object.titulo }}</h2>
+    <p>{{ object.cuerpo }}</p>
+</div>
+<div>
+    <p></p><a href="{% url 'actualizar_post' object.pk %}">+ Editar
+Post</a></p>
+    <p><a href="{% url 'eliminar_post' object.pk %}">+ Eliminar Post</a></p>
+</div>
+{% endblock content %}

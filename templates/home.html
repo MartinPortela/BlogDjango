@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% block content %}
+{% for post in post_list %}
+<div class="post-entry">
+    <h2><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h2>
+    <p>Author: {{ post.autor }}</a>
+    <p>{{ post.cuerpo }}</p>
+</div>
+{% endfor %}
+{% endblock content %}

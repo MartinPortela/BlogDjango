@@ -1,0 +1,9 @@
+<!-- templates/nuevo_post.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Nuevo post</h1>
+<form action="" method="post">{% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Guardar">
+</form>
+{% endblock content %}

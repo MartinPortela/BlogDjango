@@ -1,0 +1,20 @@
+<!-- templates/base.html -->
+{% load static %}
+<html>
+<head>
+    <title>Django blog</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+</head>
+<body>
+    <header>
+    <!-- nuevo HTML... -->
+    <div class="nav-left">
+        <h1><a href="{% url 'home' %}">Django blog</a></h1>
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'nuevo_post' %}">+ Nuevo Post</a>
+    </div>
+    <!-- fin nuevo HTML... -->
+    </header>
+<div>{% block content %} {% endblock content %}</div>
+</body
