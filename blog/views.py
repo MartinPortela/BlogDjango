@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from django.shortcuts import redirect
 from django.contrib import messages
+
 class VistaListaPosts(ListView):
     model = Post
     template_name = "home.html"
@@ -14,14 +15,14 @@ class VistaDetallePost(DetailView):
 class VistaCrearPost(LoginRequiredMixin, CreateView): 
     model = Post
     template_name = "nuevo_post.html"
-    fields = ["titulo", "cuerpo"] 
+    fields = ["titulo", "cuerpo", "archivo_audio"] 
     def form_valid(self, form):
         form.instance.autor = self.request.user
         return super().form_valid(form)
 class VistaActualizarPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView): 
     model = Post
     template_name = "actualizar_post.html"
-    fields = ["titulo", "cuerpo"]
+    fields = ["titulo", "cuerpo", "archivo_audio"]
     def test_func(self):
         return self.get_object().autor == self.request.user or self.request.user.is_staff
     def handle_no_permission(self):

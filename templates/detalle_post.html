@@ -3,6 +3,12 @@
 <div class="post-entry">
     <h2>{{ object.titulo }}</h2>
     <p>{{ object.cuerpo }}</p>
+    {% if object.archivo_audio %}
+        <audio controls class="float-end" style="max-width: 300px;">
+                    <source src="{{ object.archivo_audio.url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+        </audio>
+    {% endif %}
 </div>
 <div>
     <p></p><a href="{% url 'actualizar_post' object.pk %}">+ Editar

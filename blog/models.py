@@ -8,6 +8,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     cuerpo = models.TextField()
+    archivo_audio = models.FileField(upload_to='songs/', null=True, blank=True)
 
     def __str__(self):
         return self.titulo
