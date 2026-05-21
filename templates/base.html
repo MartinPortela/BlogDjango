@@ -14,6 +14,13 @@
         <a href="{% url 'nuevo_post' %}">+ Nuevo Post</a>
     </div>
     </header>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% if user.is_authenticated %}
         <p>Hola {{ user.username }}!</p>
         <form action="{% url 'logout' %}" method="post">
