@@ -7,14 +7,24 @@
 </head>
 <body>
     <header>
-    <!-- nuevo HTML... -->
     <div class="nav-left">
         <h1><a href="{% url 'home' %}">Django blog</a></h1>
     </div>
     <div class="nav-right">
         <a href="{% url 'nuevo_post' %}">+ Nuevo Post</a>
     </div>
-    <!-- fin nuevo HTML... -->
     </header>
+    {% if user.is_authenticated %}
+        <p>Hola {{ user.username }}!</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
+        {% else %}
+        <p>No has iniciado sesión.</p>
+        <a href="{% url 'login' %}">Log In</a>
+        <br>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
 <div>{% block content %} {% endblock content %}</div>
 </body
