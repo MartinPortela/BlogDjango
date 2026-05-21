@@ -9,6 +9,7 @@ class Post(models.Model):
     )
     cuerpo = models.TextField()
     archivo_audio = models.FileField(upload_to='songs/', null=True, blank=True)
+    portada = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self):
         return self.titulo

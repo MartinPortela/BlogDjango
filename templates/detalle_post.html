@@ -1,6 +1,9 @@
 <!-- templates/detalle_post.html -->
 {% extends "base.html" %} {% block content %}
 <div class="post-entry">
+    {% if object.portada %}
+        <img src="{{ object.portada.url }}">
+    {% endif %}
     <h2>{{ object.titulo }}</h2>
     <p>{{ object.cuerpo }}</p>
     {% if object.archivo_audio %}

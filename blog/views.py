@@ -15,14 +15,14 @@ class VistaDetallePost(DetailView):
 class VistaCrearPost(LoginRequiredMixin, CreateView): 
     model = Post
     template_name = "nuevo_post.html"
-    fields = ["titulo", "cuerpo", "archivo_audio"] 
+    fields = ["titulo", "cuerpo", "archivo_audio", "portada"] 
     def form_valid(self, form):
         form.instance.autor = self.request.user
         return super().form_valid(form)
 class VistaActualizarPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView): 
     model = Post
     template_name = "actualizar_post.html"
-    fields = ["titulo", "cuerpo", "archivo_audio"]
+    fields = ["titulo", "cuerpo", "archivo_audio", "portada"]
     def test_func(self):
         return self.get_object().autor == self.request.user or self.request.user.is_staff
     def handle_no_permission(self):
