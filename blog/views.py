@@ -23,7 +23,7 @@ class VistaActualizarPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "actualizar_post.html"
     fields = ["titulo", "cuerpo"]
     def test_func(self):
-        return self.get_object().autor == self.request.user or self.request.user.id == 1
+        return self.get_object().autor == self.request.user or self.request.user.is_staff
     def handle_no_permission(self):
         messages.error(self.request, "No tienes permiso para actualizar este post.")
         return redirect("detalle_post", pk=self.get_object().pk)
@@ -32,7 +32,7 @@ class VistaEliminarPost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = "eliminar_post.html"
     success_url = reverse_lazy("home")
     def test_func(self):
-        return self.get_object().autor == self.request.user or self.request.user.id == 1
+        return self.get_object().autor == self.request.user or self.request.user.is_staff
     def handle_no_permission(self):
         messages.error(self.request, "No tienes permiso para eliminar este post.")
         return redirect("detalle_post", pk=self.get_object().pk)
